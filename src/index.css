@@ -62,19 +62,59 @@ body {
 
   /* about section */
   .grid-container {
-    @apply w-full h-full border border-black-300 bg-black-200 rounded-lg sm:p-7 p-4 flex flex-col gap-5;
+    @apply w-full h-full border border-black-300 bg-black-200 rounded-lg sm:p-7 p-5 flex flex-col;
+  }
+
+  .about-card {
+    @apply min-h-[31rem] justify-between gap-7 overflow-hidden;
+  }
+
+  .about-visual {
+    @apply flex min-h-[17rem] w-full items-center justify-center rounded-lg;
+  }
+
+  .about-profile-image {
+    @apply aspect-square w-full max-w-[240px] rounded-full border border-black-300 bg-black-300/40 object-cover object-top;
+  }
+
+  .about-copy {
+    @apply w-full max-w-md;
+  }
+
+  .about-contact {
+    @apply max-w-none;
+  }
+
+  .globe-visual {
+    @apply min-h-[17rem] overflow-hidden;
   }
 
   .grid-headtext {
-    @apply text-xl font-semibold mb-2 text-white font-generalsans;
+    @apply text-xl font-semibold mb-3 text-white font-generalsans leading-tight;
   }
 
   .grid-subtext {
-    @apply text-[#afb0b6] text-base font-generalsans;
+    @apply text-[#afb0b6] text-base leading-7 font-generalsans;
   }
 
   .copy-container {
     @apply cursor-pointer flex justify-center items-center gap-2;
+  }
+
+  .stack-grid {
+    @apply grid w-full max-w-sm grid-cols-2 gap-4 sm:grid-cols-3;
+  }
+
+  .stack-icon {
+    @apply aspect-square min-h-0 rounded-lg border border-black-300 bg-black-300/50 flex flex-col items-center justify-center gap-3 p-3 text-sm font-semibold text-white-600 transition-colors hover:border-black-500 hover:bg-black-300;
+  }
+
+  .stack-icon img {
+    @apply h-9 w-9 object-contain;
+  }
+
+  .stack-icon span {
+    @apply flex h-9 w-9 items-center justify-center rounded-md bg-black-600 text-base font-bold text-white;
   }
 
   /* projects section  */
@@ -84,6 +124,18 @@ body {
 
   .tech-logo {
     @apply w-10 h-10 rounded-md p-2 bg-neutral-100 bg-opacity-10 backdrop-filter backdrop-blur-lg flex justify-center items-center;
+  }
+
+  .project-media {
+    @apply border border-black-300 bg-black-200 rounded-lg overflow-hidden min-h-96 md:min-h-[32rem];
+  }
+
+  .project-media_asset {
+    @apply w-full h-full min-h-96 md:min-h-[32rem] object-cover;
+  }
+
+  .resume-btn {
+    @apply rounded-md border border-black-300 bg-black-200 px-4 py-3 text-sm font-semibold text-white-600 transition-colors hover:bg-black-300 hover:text-white;
   }
 
   /* clients section */
@@ -126,7 +178,7 @@ body {
 
   /* contact section */
   .contact-container {
-    @apply max-w-xl relative z-10 sm:px-10 px-5 mt-12;
+    @apply max-w-xl relative z-10 sm:px-10 px-5 pt-28 pb-10;
   }
 
   .field-label {

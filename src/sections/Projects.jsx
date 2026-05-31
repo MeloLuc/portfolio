@@ -1,12 +1,9 @@
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { Suspense, useState } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { Center, OrbitControls } from '@react-three/drei';
+import { useState } from 'react';
 
 import { myProjects } from '../constants/index.js';
-import CanvasLoader from '../components/Loading.jsx';
-import DemoComputer from '../components/DemoComputer.jsx';
+import { assetPath } from '../utils/assetPath.js';
 
 const projectCount = myProjects.length;
 
@@ -28,10 +25,22 @@ const Projects = () => {
   }, [selectedProjectIndex]);
 
   const currentProject = myProjects[selectedProjectIndex];
+  const isVideo = currentProject.texture?.match(/\.(mp4|webm|ogg)$/i);
 
   return (
     <section className="c-space my-20">
-      <p className="head-text">My Selected Work</p>
+      <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+        <p className="head-text">My Work Experience</p>
+
+        <div className="flex flex-wrap gap-3">
+          <a className="resume-btn" href={assetPath('resume/curriculo-pt.pdf')} download>
+            Curriculo PT
+          </a>
+          <a className="resume-btn" href={assetPath('resume/resume-en.pdf')} download>
+            Resume EN
+          </a>
+        </div>
+      </div>
 
       <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
         <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
@@ -65,34 +74,36 @@ const Projects = () => {
               target="_blank"
               rel="noreferrer">
               <p>Check Live Site</p>
-              <img src="/assets/arrow-up.png" alt="arrow" className="w-3 h-3" />
+              <img src={assetPath('assets/arrow-up.png')} alt="arrow" className="w-3 h-3" />
             </a>
           </div>
 
           <div className="flex justify-between items-center mt-7">
             <button className="arrow-btn" onClick={() => handleNavigation('previous')}>
-              <img src="/assets/left-arrow.png" alt="left arrow" />
+              <img src={assetPath('assets/left-arrow.png')} alt="left arrow" />
             </button>
 
             <button className="arrow-btn" onClick={() => handleNavigation('next')}>
-              <img src="/assets/right-arrow.png" alt="right arrow" className="w-4 h-4" />
+              <img src={assetPath('assets/right-arrow.png')} alt="right arrow" className="w-4 h-4" />
             </button>
           </div>
         </div>
 
-        <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
-          <Canvas>
-            <ambientLight intensity={Math.PI} />
-            <directionalLight position={[10, 10, 5]} />
-            <Center>
-              <Suspense fallback={<CanvasLoader />}>
-                <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
-                  <DemoComputer texture={currentProject.texture} />
-                </group>
-              </Suspense>
-            </Center>
-            <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} />
-          </Canvas>
+        <div className="project-media">
+          {isVideo ? (
+            <video
+              key={currentProject.texture}
+              className="project-media_asset"
+              src={currentProject.texture}
+              autoPlay
+              loop
+              muted
+              playsInline
+              controls
+            />
+          ) : (
+            <img className="project-media_asset" src={currentProject.texture} alt={currentProject.title} />
+          )}
         </div>
       </div>
     </section>

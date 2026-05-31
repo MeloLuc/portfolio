@@ -1,4 +1,5 @@
 import { clientReviews } from '../constants/index.js';
+import { assetPath } from '../utils/assetPath.js';
 
 const Clients = () => {
   return (
@@ -22,7 +23,7 @@ const Clients = () => {
 
                 <div className="flex self-end items-center gap-2">
                   {Array.from({ length: 5 }).map((_, index) => (
-                    <img key={index} src="/assets/star.png" alt="star" className="w-5 h-5" />
+                    <img key={index} src={assetPath('assets/star.png')} alt="star" className="w-5 h-5" />
                   ))}
                 </div>
               </div>

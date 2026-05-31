@@ -1,102 +1,100 @@
-import { useState } from 'react';
 import Globe from 'react-globe.gl';
 
 import Button from '../components/Button.jsx';
 
+const linkedinUrl = 'https://www.linkedin.com/in/lucas-de-melo-monteiro-peixoto-34b78926b';
+
+const stackIcons = [
+  {
+    name: 'Java',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
+  },
+  {
+    name: 'JavaScript',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+  },
+  {
+    name: 'Python',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+  },
+  {
+    name: 'MySQL',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+  },
+  {
+    name: 'TypeScript',
+    icon: 'assets/typescript.png',
+  },
+  {
+    name: '',
+    icon: null,
+  },
+];
+
 const About = () => {
-  const [hasCopied, setHasCopied] = useState(false);
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(' adrian@jsmastery.pro');
-    setHasCopied(true);
-
-    setTimeout(() => {
-      setHasCopied(false);
-    }, 2000);
-  };
-
   return (
     <section className="c-space my-20" id="about">
-      <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
-        <div className="col-span-1 xl:row-span-3">
-          <div className="grid-container">
-            <img src="assets/grid1.png" alt="grid-1" className="w-full sm:h-[276px] h-fit object-contain" />
+      <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 items-stretch">
+        <div className="col-span-1">
+          <div className="grid-container about-card">
+            <div className="about-visual">
+              <img src="assets/lucas-melo.png" alt="Lucas Melo" className="about-profile-image" />
+            </div>
 
-            <div>
-              <p className="grid-headtext">Hi, I’m Lucas Melo</p>
+            <div className="about-copy">
+              <p className="grid-headtext">Hi, I'm Lucas Melo</p>
               <p className="grid-subtext">
                 With 1 year of experience, I have honed my skills in both frontend and backend dev, working with dynamic
-                and responsive websites, API's and aplication with IA.
+                and responsive websites, APIs, and AI-powered applications.
               </p>
             </div>
           </div>
         </div>
 
-        <div className="col-span-1 xl:row-span-3">
-          <div className="grid-container">
-            <img src="assets/grid2.png" alt="grid-2" className="w-full sm:h-[276px] h-fit object-contain" />
+        <div className="col-span-1">
+          <div className="grid-container about-card">
+            <div className="about-visual">
+              <div className="stack-grid" aria-label="Tech stack">
+                {stackIcons.map((stack, index) => (
+                  <div className="stack-icon" key={stack.name || `more-${index}`}>
+                    {stack.icon ? <img src={stack.icon} alt={stack.name} /> : <span>...</span>}
+                    <p>{stack.name || 'More'}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
 
-            <div>
+            <div className="about-copy">
               <p className="grid-headtext">Tech Stack</p>
               <p className="grid-subtext">
-                Fueled by curiosity and a passion for solving complex problems, I actively explore a wide range of technologies to build effective solutions.
-                I aim to leverage the right tool for every challenge, and my commitment to lifelong learning enables me to quickly adopt new languages and frameworks to achieve optimal results.
+                Fueled by curiosity and a passion for solving complex problems, I actively explore a focused set of
+                technologies to build effective solutions across web apps, databases, backend logic, and AI features.
               </p>
             </div>
           </div>
         </div>
 
-        <div className="col-span-1 xl:row-span-4">
-          <div className="grid-container">
-            <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
+        <div className="col-span-1 md:col-span-2 xl:col-span-1">
+          <div className="grid-container about-card">
+            <div className="about-visual globe-visual">
               <Globe
-                height={326}
-                width={326}
+                height={292}
+                width={292}
                 backgroundColor="rgba(0, 0, 0, 0)"
                 backgroundImageOpacity={0.5}
                 showAtmosphere
                 showGraticules
                 globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
                 bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-                labelsData={[{ lat: 40, lng: -100, text: 'Rjieka, Croatia', color: 'white', size: 15 }]}
+                labelsData={[{ lat: -18.5, lng: -44.5, text: 'Minas Gerais, Brazil', color: 'white', size: 15 }]}
               />
             </div>
-            <div>
-              <p className="grid-headtext">I’m very flexible with time zone & locations</p>
+            <div className="about-copy about-contact">
+              <p className="grid-headtext">I'm very flexible with time zone & locations</p>
               <p className="grid-subtext">I&apos;m based in Minas Gerais, Brazil, and I'm open to remote work around the world.</p>
-              <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
-            </div>
-          </div>
-        </div>
-
-        <div className="xl:col-span-2 xl:row-span-3">
-          <div className="grid-container">
-            <img src="assets/grid3.png" alt="grid-3" className="w-full sm:h-[266px] h-fit object-contain" />
-
-            <div>
-              <p className="grid-headtext">My Passion for Coding</p>
-              <p className="grid-subtext">
-                I love solving problems and building things through code. Programming isn&apos;t just my
-                profession—it&apos;s my passion. I enjoy exploring new technologies, and enhancing my skills.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="xl:col-span-1 xl:row-span-2">
-          <div className="grid-container">
-            <img
-              src="assets/grid4.png"
-              alt="grid-4"
-              className="w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top"
-            />
-
-            <div className="space-y-2">
-              <p className="grid-subtext text-center">Contact me</p>
-              <div className="copy-container" onClick={handleCopy}>
-                <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" />
-                <p className="lg:text-1xl md:text-xl font-medium text-gray_gradient text-white">lucas.1599293@discente.uemg.br</p>
-              </div>
+              <a href={linkedinUrl} target="_blank" rel="noreferrer" className="block">
+                <Button name="Contact Me" isBeam containerClass="w-full mt-8" />
+              </a>
             </div>
           </div>
         </div>

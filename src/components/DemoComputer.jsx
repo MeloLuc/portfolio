@@ -6,13 +6,14 @@ import { useRef, useEffect } from 'react';
 import { useGLTF, useAnimations, useVideoTexture } from '@react-three/drei';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { assetPath } from '../utils/assetPath.js';
 
 const DemoComputer = (props) => {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF('/models/computer.glb');
+  const { nodes, materials, animations } = useGLTF(assetPath('models/computer.glb'));
   const { actions } = useAnimations(animations, group);
 
-  const txt = useVideoTexture(props.texture ? props.texture : '/textures/project/project1.mp4');
+  const txt = useVideoTexture(props.texture ? props.texture : assetPath('textures/project/project1.mp4'));
 
   useEffect(() => {
     if (txt) {
@@ -1011,6 +1012,6 @@ const DemoComputer = (props) => {
   );
 };
 
-useGLTF.preload('/models/computer.glb');
+useGLTF.preload(assetPath('models/computer.glb'));
 
 export default DemoComputer;

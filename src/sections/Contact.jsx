@@ -3,6 +3,7 @@ import { useRef, useState } from 'react';
 
 import useAlert from '../hooks/useAlert.js';
 import Alert from '../components/Alert.jsx';
+import { assetPath } from '../utils/assetPath.js';
 
 const Contact = () => {
   const formRef = useRef();
@@ -68,8 +69,8 @@ const Contact = () => {
     <section className="c-space my-20" id="contact">
       {alert.show && <Alert {...alert} />}
 
-      <div className="relative min-h-screen flex items-center justify-center flex-col">
-        <img src="/assets/terminal.png" alt="terminal-bg" className="absolute inset-0 min-h-screen" />
+      <div className="relative min-h-screen flex items-center justify-start flex-col">
+        <img src={assetPath('assets/terminal.png')} alt="terminal-bg" className="absolute inset-0 h-full w-full object-cover" />
 
         <div className="contact-container">
           <h3 className="head-text">Let's talk</h3>
@@ -88,7 +89,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 className="field-input"
-                placeholder="ex., John Doe"
+                placeholder="ex., Lucas Melo Monteiro Peixoto"
               />
             </label>
 
@@ -101,7 +102,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 className="field-input"
-                placeholder="ex., johndoe@gmail.com"
+                placeholder="ex., lucas@gmail.com"
               />
             </label>
 
@@ -121,7 +122,7 @@ const Contact = () => {
             <button className="field-btn" type="submit" disabled={loading}>
               {loading ? 'Sending...' : 'Send Message'}
 
-              <img src="/assets/arrow-up.png" alt="arrow-up" className="field-btn_arrow" />
+              <img src={assetPath('assets/arrow-up.png')} alt="arrow-up" className="field-btn_arrow" />
             </button>
           </form>
         </div>
