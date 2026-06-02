@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+html {
   scroll-behavior: smooth;
 }
 
@@ -97,10 +97,6 @@ body {
     @apply text-[#afb0b6] text-base leading-7 font-generalsans;
   }
 
-  .copy-container {
-    @apply cursor-pointer flex justify-center items-center gap-2;
-  }
-
   .stack-grid {
     @apply grid w-full max-w-sm grid-cols-2 gap-4 sm:grid-cols-3;
   }
@@ -126,75 +122,20 @@ body {
     @apply w-10 h-10 rounded-md p-2 bg-neutral-100 bg-opacity-10 backdrop-filter backdrop-blur-lg flex justify-center items-center;
   }
 
+  .tech-logo span {
+    @apply text-[10px] font-bold leading-none text-white-600;
+  }
+
   .project-media {
-    @apply border border-black-300 bg-black-200 rounded-lg overflow-hidden min-h-96 md:min-h-[32rem];
+    @apply flex min-h-96 items-center justify-center overflow-hidden rounded-lg border border-black-300 bg-black-200 p-3 md:min-h-[32rem];
   }
 
   .project-media_asset {
-    @apply w-full h-full min-h-96 md:min-h-[32rem] object-cover;
+    @apply h-full max-h-[32rem] min-h-0 w-full object-contain;
   }
 
   .resume-btn {
     @apply rounded-md border border-black-300 bg-black-200 px-4 py-3 text-sm font-semibold text-white-600 transition-colors hover:bg-black-300 hover:text-white;
-  }
-
-  /* clients section */
-  .client-container {
-    @apply grid md:grid-cols-2 grid-cols-1 gap-5 mt-12;
-  }
-
-  .client-review {
-    @apply rounded-lg md:p-10 p-5 col-span-1 bg-black-300 bg-opacity-50;
-  }
-
-  .client-content {
-    @apply flex lg:flex-row flex-col justify-between lg:items-center items-start gap-5 mt-7;
-  }
-
-  /*  work experience section */
-  .work-container {
-    @apply grid lg:grid-cols-3 grid-cols-1 gap-5 mt-12;
-  }
-
-  .work-canvas {
-    @apply col-span-1 rounded-lg bg-black-200 border border-black-300;
-  }
-
-  .work-content {
-    @apply col-span-2 rounded-lg bg-black-200 border border-black-300;
-  }
-
-  .work-content_container {
-    @apply grid grid-cols-[auto_1fr] items-start gap-5  transition-all ease-in-out duration-500 cursor-pointer hover:bg-black-300 rounded-lg sm:px-5 px-2.5;
-  }
-
-  .work-content_logo {
-    @apply rounded-3xl w-16 h-16 p-2 bg-black-600;
-  }
-
-  .work-content_bar {
-    @apply flex-1 w-0.5 mt-4 h-full bg-black-300 group-hover:bg-black-500 group-last:hidden;
-  }
-
-  /* contact section */
-  .contact-container {
-    @apply max-w-xl relative z-10 sm:px-10 px-5 pt-28 pb-10;
-  }
-
-  .field-label {
-    @apply text-lg text-white-600;
-  }
-
-  .field-input {
-    @apply w-full bg-black-300 px-5 py-2 min-h-14 rounded-lg placeholder:text-white-500 text-lg text-white-800 shadow-black-200 shadow-2xl focus:outline-none;
-  }
-
-  .field-btn {
-    @apply bg-black-500 px-5 py-2 min-h-12 rounded-lg shadow-black-200 shadow-2xl flex justify-center items-center text-lg text-white gap-3;
-  }
-
-  .field-btn_arrow {
-    @apply w-2.5 h-2.5 object-contain invert brightness-0;
   }
 
   /*  footer */

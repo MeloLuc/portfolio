@@ -9,203 +9,126 @@ export const navLinks = [
   {
     id: 2,
     name: 'Work',
-    href: '#work',
-  },
-  {
-    id: 3,
-    name: 'Contact',
-    href: '#contact',
-  },
-  {
-    id: 4,
-    name: 'github',
-    href: 'https://github.com/MeloLuc',
+    href: '#projects',
   },
 ];
 
-export const clientReviews = [
-  {
-    id: 1,
-    name: '',
-    position: '',
-    img: '',
-    review:
-      '',
-  },
-];
+const techTags = {
+  angular: { id: 'angular', name: 'Angular', label: 'Angular' },
+  css: { id: 'css', name: 'CSS', label: 'CSS' },
+  html: { id: 'html', name: 'HTML', label: 'HTML' },
+  javascript: { id: 'javascript', name: 'JavaScript', label: 'JS' },
+  kommo: { id: 'kommo', name: 'Kommo', label: 'Kommo' },
+  mongodb: { id: 'mongodb', name: 'MongoDB', label: 'MongoDB' },
+  mysql: { id: 'mysql', name: 'MySQL', label: 'MySQL' },
+  python: { id: 'python', name: 'Python', label: 'Python' },
+  react: { id: 'react', name: 'React.js', label: 'React' },
+  redis: { id: 'redis', name: 'Redis', label: 'Redis' },
+  supabase: { id: 'supabase', name: 'Supabase', label: 'Supabase' },
+  tailwind: { id: 'tailwind', name: 'TailwindCSS', label: 'Tailwind' },
+  venom: { id: 'venom', name: 'Venom', label: 'Venom' },
+  whatsapp: { id: 'whatsapp', name: 'WhatsApp API', label: 'WA' },
+};
 
 export const myProjects = [
   {
-    title: '',
-    desc: '',
+    title: 'Kommo Campaign Automation',
+    desc:
+      'Message sending through Kommo with bot setup, campaign maintenance, and delivery tracking for different clients.',
     subdesc:
-      '',
+      'I also created database tables to register campaigns across a base of more than 100,000 contacts, organizing data for control and analysis.',
     href: '',
-    texture: assetPath('textures/project/project1.mp4'),
-    logo: assetPath('assets/project-logo1.png'),
-    logoStyle: {
-      backgroundColor: '#2A1816',
-      border: '0.2px solid #36201D',
-      boxShadow: '0px 0px 60px 0px #AA3C304D',
-    },
+    texture: assetPath('assets/kommo.png'),
     spotlight: assetPath('assets/spotlight1.png'),
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: assetPath('assets/react.svg'),
-      }
-    ],
+    tags: [techTags.kommo, techTags.javascript, techTags.mysql],
   },
   {
-    title: 'LiveDoc - Real-Time Google Docs Clone',
-    desc: 'LiveDoc is a powerful collaborative app that elevates the capabilities of real-time document editing. As an enhanced version of Google Docs, It supports millions of collaborators simultaneously, ensuring that every change is captured instantly and accurately.',
+    title: 'CRM MVP with WhatsApp and AI',
+    desc:
+      'Built a CRM MVP with the official WhatsApp API, an AI-powered bot, a JavaScript API, and a frontend built with React.',
     subdesc:
-      'With LiveDoc, users can experience the future of collaboration, where multiple contributors work together in real time without any lag, by using Next.js and Liveblocks newest features.',
-    href: 'https://www.youtube.com/watch?v=y5vE8y_f_OM',
-    texture: assetPath('textures/project/project2.mp4'),
-    logo: assetPath('assets/project-logo2.png'),
-    logoStyle: {
-      backgroundColor: '#13202F',
-      border: '0.2px solid #17293E',
-      boxShadow: '0px 0px 60px 0px #2F6DB54D',
-    },
+      'The project combined MySQL, MongoDB, and Redis to separate relational data, flexible records, and high-speed information.',
+    href: '',
+    texture: assetPath('assets/uaibots.png'),
     spotlight: assetPath('assets/spotlight2.png'),
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: assetPath('assets/react.svg'),
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: assetPath('assets/tailwindcss.png'),
-      },
-      {
-        id: 3,
-        name: 'TypeScript',
-        path: assetPath('assets/typescript.png'),
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: assetPath('assets/framer.png'),
-      },
-    ],
+    tags: [techTags.javascript, techTags.whatsapp, techTags.mongodb, techTags.redis, techTags.mysql],
   },
   {
-    title: 'CarePulse - Health Management System',
-    desc: 'An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.',
+    title: 'Hair Salon Schedule Manager',
+    desc:
+      'Scheduling management system with WhatsApp integration through Venom and an AI bot to support customer service and appointment flows.',
     subdesc:
-      'With a focus on efficiency, CarePulse integrantes complex forms and SMS notifications, by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.',
-    href: 'https://www.youtube.com/watch?v=lEflo_sc82g',
-    texture: assetPath('textures/project/project3.mp4'),
-    logo: assetPath('assets/project-logo3.png'),
-    logoStyle: {
-      backgroundColor: '#60f5a1',
-      background:
-        'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
-      border: '0.2px solid rgba(208, 213, 221, 1)',
-      boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
-    },
+      'The solution was developed in JavaScript with SQL Server as the database, focused on daily operations and schedule organization.',
+    href: '',
+    texture: assetPath('assets/hair.png'),
     spotlight: assetPath('assets/spotlight3.png'),
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: assetPath('assets/react.svg'),
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: assetPath('assets/tailwindcss.png'),
-      },
-      {
-        id: 3,
-        name: 'TypeScript',
-        path: assetPath('assets/typescript.png'),
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: assetPath('assets/framer.png'),
-      },
-    ],
+    tags: [techTags.javascript, techTags.venom, techTags.whatsapp, techTags.mysql],
   },
   {
-    title: 'Horizon - Online Banking Platform',
-    desc: 'Horizon is a comprehensive online banking platform that offers users a centralized finance management dashboard. It allows users to connect multiple bank accounts, monitor real-time transactions, and seamlessly transfer money to other users.',
+    title: 'Academic Event Management',
+    desc:
+      'Team-based organization and development of a website to manage academic events for Computer Engineering.',
     subdesc:
-      'Built with Next.js 14 Appwrite, Dwolla and Plaid, Horizon ensures a smooth and secure banking experience, tailored to meet the needs of modern consumers.',
-    href: 'https://www.youtube.com/watch?v=PuOVqP_cjkE',
-    texture: assetPath('textures/project/project4.mp4'),
-    logo: assetPath('assets/project-logo4.png'),
-    logoStyle: {
-      backgroundColor: '#0E1F38',
-      border: '0.2px solid #0E2D58',
-      boxShadow: '0px 0px 60px 0px #2F67B64D',
-    },
+      'The project used Supabase and React, while I also contributed to event planning and management.',
+    href: '',
+    texture: assetPath('assets/jornada.jpeg'),
     spotlight: assetPath('assets/spotlight4.png'),
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: assetPath('assets/react.svg'),
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: assetPath('assets/tailwindcss.png'),
-      },
-      {
-        id: 3,
-        name: 'TypeScript',
-        path: assetPath('assets/typescript.png'),
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: assetPath('assets/framer.png'),
-      },
-    ],
+    tags: [techTags.supabase, techTags.react, techTags.tailwind],
   },
   {
-    title: 'Imaginify - AI Photo Manipulation App',
-    desc: 'Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.',
+    title: 'Minas Textil Customizer',
+    desc:
+      'API and frontend for an AI-powered customizer for T-shirts and acrylic lamps, integrated with the Minas Textil e-commerce platform.',
     subdesc:
-      'Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.',
-    href: 'https://www.youtube.com/watch?v=Ahwoks_dawU',
-    texture: assetPath('textures/project/project5.mp4'),
-    logo: assetPath('assets/project-logo5.png'),
-    logoStyle: {
-      backgroundColor: '#1C1A43',
-      border: '0.2px solid #252262',
-      boxShadow: '0px 0px 60px 0px #635BFF4D',
-    },
+      'The API was developed in Python, the frontend in Angular, and the database in MySQL, connecting product customization to the sales flow.',
+    href: '',
+    texture: assetPath('assets/minastextil.png'),
     spotlight: assetPath('assets/spotlight5.png'),
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: assetPath('assets/react.svg'),
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: assetPath('assets/tailwindcss.png'),
-      },
-      {
-        id: 3,
-        name: 'TypeScript',
-        path: assetPath('assets/typescript.png'),
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: assetPath('assets/framer.png'),
-      },
-    ],
+    tags: [techTags.python, techTags.angular, techTags.mysql],
+  },
+  {
+    title: 'NASA Space Apps 2025',
+    desc:
+      'Participation in the NASA Space Apps 2025 hackathon, building an API for temperature, humidity, and rainfall prediction analysis.',
+    subdesc:
+      'The solution used decades of collected data and probability calculations, with a Python API and a frontend built with a Lovable-style stack.',
+    href: '',
+    texture: assetPath('assets/nasa.jpeg'),
+    spotlight: assetPath('assets/spotlight1.png'),
+    tags: [techTags.python, techTags.react],
+  },
+  {
+    title: 'Programming Competitions',
+    desc:
+      'Participation in programming competitions, including SBC 2025 in Uberlandia and IFTM Coxinhas++ 2025.',
+    subdesc:
+      'The competitions involved problem solving, algorithmic reasoning, and Java development under time constraints.',
+    href: '',
+    texture: assetPath('assets/coxinha.jpeg'),
+    spotlight: assetPath('assets/spotlight2.png'),
+    tags: [{ id: 'java', name: 'Java', label: 'JAVA' }],
+  },
+  {
+    title: 'Technology Events',
+    desc:
+      'Participation in events such as DevFest 2025 and Collab Inovacao 2026, both held in Uberlandia.',
+    subdesc:
+      'Experiences focused on community, networking, technical talks, and following trends in the software development ecosystem.',
+    href: '',
+    texture: assetPath('assets/devfest.jpg'),
+    spotlight: assetPath('assets/spotlight3.png'),
+    tags: [],
+  },
+  {
+    title: 'Photographer Website',
+    desc:
+      'Study website for a photographer, built with plain HTML, CSS, and JavaScript.',
+    subdesc:
+      'The project focused on page structure, visual organization, responsiveness, and simple frontend interactions.',
+    href: '',
+    texture: assetPath('assets/fotografa.PNG'),
+    spotlight: assetPath('assets/spotlight4.png'),
+    tags: [techTags.html, techTags.css, techTags.javascript],
   },
 ];
 
@@ -219,15 +142,3 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
     cube4Position: isSmall ? [4, -5, 0] : isMobile ? [5, -5, 0] : isTablet ? [5, -5, 0] : [7, -3.5, 4],
   };
 };
-
-export const workExperiences = [
-  {
-    id: 1,
-    name: '',
-    pos: '',
-    duration: '',
-    title: "",
-    icon: '',
-    animation: 'victory',
-  },
-];

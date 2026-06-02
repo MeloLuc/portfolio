@@ -1,5 +1,28 @@
 import { assetPath } from '../utils/assetPath.js';
 
+const socialLinks = [
+  {
+    name: 'github',
+    href: 'https://github.com/MeloLuc',
+    icon: assetPath('assets/github.svg'),
+  },
+  {
+    name: 'linkedin',
+    href: 'https://www.linkedin.com/in/lucas-de-melo-monteiro-peixoto-34b78926b',
+    icon: assetPath('assets/linkedin.svg'),
+  },
+  {
+    name: 'leetcode',
+    href: 'https://leetcode.com/u/melol/',
+    icon: assetPath('assets/leetcode.svg'),
+  },
+  {
+    name: 'instagram',
+    href: 'https://www.instagram.com/melo.l/',
+    icon: assetPath('assets/instagram.svg'),
+  },
+];
+
 const Footer = () => {
   return (
     <footer className="c-space pt-7 pb-3 border-t border-black-300 flex justify-between items-center flex-wrap gap-5">
@@ -10,18 +33,20 @@ const Footer = () => {
       </div>
 
       <div className="flex gap-3">
-        <div className="social-icon">
-          <img src={assetPath('assets/github.svg')} alt="github" className="w-1/2 h-1/2" />
-        </div>
-        <div className="social-icon">
-          <img src={assetPath('assets/twitter.svg')} alt="twitter" className="w-1/2 h-1/2" />
-        </div>
-        <div className="social-icon">
-          <img src={assetPath('assets/instagram.svg')} alt="instagram" className="w-1/2 h-1/2" />
-        </div>
+        {socialLinks.map((link) =>
+          link.href ? (
+            <a key={link.name} href={link.href} target="_blank" rel="noreferrer" className="social-icon">
+              <img src={link.icon} alt={link.name} className="w-1/2 h-1/2" />
+            </a>
+          ) : (
+            <div key={link.name} className="social-icon">
+              <img src={link.icon} alt={link.name} className="w-1/2 h-1/2" />
+            </div>
+          ),
+        )}
       </div>
 
-      <p className="text-white-500">© 2024 Lucas Melo. All rights reserved.</p>
+      <p className="text-white-500">&copy; 2026 Lucas Melo. All rights reserved.</p>
     </footer>
   );
 };
